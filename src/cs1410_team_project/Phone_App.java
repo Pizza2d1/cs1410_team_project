@@ -1,4 +1,4 @@
-package phone_registry;
+package cs1410_team_project;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -62,6 +62,9 @@ public class Phone_App {
       // Start getting input
       user_input = getUserInput("Enter your selection:");
       
+      
+      
+      
       // Use local function to see if string input is an integer
       if (isInteger(user_input)) {
     	  switch (user_input) {
@@ -100,7 +103,7 @@ public class Phone_App {
           case "5":
         	  System.out.println("Selected option 5");
         	  
-        	  System.out.println(phone_register.getCount());
+        	  //System.out.println(phone_register.getCount());
         	  
         	  return true;
           case "6":
