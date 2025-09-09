@@ -8,6 +8,8 @@ import java.util.Scanner;
  */
 
 public class Phone_App {
+	
+	public String user_input;
 
 	public static void main(String[] args) {	
 		System.out.println("Hello user");
@@ -21,8 +23,11 @@ public class Phone_App {
 			}
 		}
 	}
-	
-	public static boolean userSession() {
+	/**
+	 * 
+	 * @return Checks to see if the user wants to continue using the registry, whether to add, find, or delete a device from the list
+	 */
+	public boolean userSession() {
       System.out.println("1. Show all devices");
       System.out.println("2. Add a device");
       System.out.println("3. Find a device");
@@ -31,10 +36,7 @@ public class Phone_App {
       System.out.println("6. Exit");
       
       // Start getting input
-      Scanner scanner = new Scanner(System.in);
-      System.out.println("Enter your selection:");
-      String user_input = scanner.nextLine();
-      scanner.close();
+      user_input = getUserInput("Enter your selection:");
       
       // Use local function to see if string input is an integer
       if (isInteger(user_input)) {
@@ -48,8 +50,12 @@ public class Phone_App {
           case "2":
         	  System.out.println("Selected option 2");
         	  
-        	  // Code goes here
-        	  Phone add_phone = new Phone();
+        	  //Phone add_phone = new Phone();
+        	  String manufacturer_user_input = getUserInput("What is the phone's manufacturer?: ");
+        	  String screen_user_input = getUserInput("What is the phone's screen type?: ");
+        	  String storage_user_input = getUserInput("What is the phone's storage?: ");
+        	  
+        	  //add_phone.addPhone(manufacturer_user_input, screen_user_input, storage_user_input);
         	  
         	  
         	  return true;
@@ -86,31 +92,23 @@ public class Phone_App {
 	/**
 	 * @return user_input The manufacturer identifier from the user
 	 */
-	public static String inputManufacturer() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("What is the manufacturer name? ( Iphone / Samsung / Google ): ");
-        String user_input = scanner.nextLine();
-        scanner.close();
+	public String inputManufacturer() {
+        user_input = getUserInput("What is the manufacturer name? ( Iphone / Samsung / Google ): ");
         return user_input;
 	}
 	/**
 	 * @return user_input The screen type identifier from the user
 	 */
-	public static String inputScreenType() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("What is the screen type? ( LCD / OLED / AMOLED ) ");
-        String user_input = scanner.nextLine();
-        scanner.close();
+	public String inputScreenType() {
+        user_input = getUserInput("What is the screen type? ( LCD / OLED / AMOLED ) ");
         return user_input;
 	}
 	/**
 	 * @return user_input The storage space identifier from the user
 	 */
-	public static int inputStorageSpace() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("What is the storage space in GB that the phone can hold? ( 128 / 256 / 512 ): ");
-        String user_input = scanner.nextLine();
-        scanner.close();
+	public int inputStorageSpace() {
+        user_input = getUserInput("What is the storage space in GB that the phone can hold? ( 128 / 256 / 512 ): ");
+
         if (isInteger(user_input)) {
         	int sanitized_user_input = Integer.parseInt(user_input);
         	return sanitized_user_input;
@@ -123,7 +121,7 @@ public class Phone_App {
 	 * @param s String variable that will be checked
 	 * @return Value indicating whether the inputed string is a integer, not including doubles
 	 */
-	public static boolean isInteger(String s) {
+	public boolean isInteger(String s) {
 	    try { 
 	        Integer.parseInt(s); 
 	    } catch(NumberFormatException e) { 
@@ -133,5 +131,13 @@ public class Phone_App {
 	    }
 	    // only got here if we didn't return false
 	    return true;
+	}
+	
+	public String getUserInput(String question) {
+	    Scanner scanner = new Scanner(System.in);
+	    System.out.print(question);
+	    String user_input = scanner.nextLine();
+	    scanner.close();
+	    return user_input;
 	}
 }
