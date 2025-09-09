@@ -1,4 +1,4 @@
-package phone_registry;
+package cs1410_team_project;
 import java.util.Scanner;
 
 /**

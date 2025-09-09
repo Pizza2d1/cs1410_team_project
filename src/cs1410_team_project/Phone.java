@@ -1,3 +1,4 @@
+package cs1410_team_project;
 /**
  * A class that contains the attributes of the phone objects and returns them to the user interface.
  * 

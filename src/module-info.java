@@ -4,5 +4,5 @@
 /**
  * 
  */
-module cs1410_DocComments_Review {
+module cs1410_team_project {
 }
