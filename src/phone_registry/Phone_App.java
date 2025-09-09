@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class Phone_App {
 	
-	public String user_input;
+	public static String user_input;
 
 	public static void main(String[] args) {	
 		System.out.println("Hello user");
-    userSession();
-    userSession();
+		userSession();
+		userSession();
 		while (true) {
 			if (userSession() == false) {
 				break;
@@ -27,7 +27,7 @@ public class Phone_App {
 	 * 
 	 * @return Checks to see if the user wants to continue using the registry, whether to add, find, or delete a device from the list
 	 */
-	public boolean userSession() {
+	public static boolean userSession() {
       System.out.println("1. Show all devices");
       System.out.println("2. Add a device");
       System.out.println("3. Find a device");
@@ -121,7 +121,7 @@ public class Phone_App {
 	 * @param s String variable that will be checked
 	 * @return Value indicating whether the inputed string is a integer, not including doubles
 	 */
-	public boolean isInteger(String s) {
+	public static boolean isInteger(String s) {
 	    try { 
 	        Integer.parseInt(s); 
 	    } catch(NumberFormatException e) { 
@@ -133,7 +133,7 @@ public class Phone_App {
 	    return true;
 	}
 	
-	public String getUserInput(String question) {
+	public static String getUserInput(String question) {
 	    Scanner scanner = new Scanner(System.in);
 	    System.out.print(question);
 	    String user_input = scanner.nextLine();
