@@ -1,4 +1,6 @@
-package cs1410_team_project;
+package  cs1410_team_project;
+import java.util.HashMap; 
+import java.util.ArrayList;
 /**
  * A class that contains the attributes of the phone objects and returns them to the user interface.
  * 
@@ -8,7 +10,7 @@ public class Phone {
 	private String Manufacturer;
 	private String ScreenType;
 	private int StorageSpace;
-	private final int id;
+	private int id;
 	private static int nextId = 1;
 	/**
 	 * Constructor to initialize fields
@@ -22,8 +24,14 @@ public class Phone {
 		this.Manufacturer = manufacturer;
 		this.ScreenType = screenType;
 		this.StorageSpace = storageSpace;
-		this.id = 1234567 + nextId++;
+		this.id = 123456 + nextId++;
+		
 	}
+	
+	
+	HashMap<Integer, ArrayList<String>> ID = new HashMap<>();
+	
+	
 	/**
 	 * Returns the phones manufacturer
 	 * @return the manufacturer
@@ -49,9 +57,14 @@ public class Phone {
 	 * Returns the phone objects id
 	 * @return the id
 	 */
+	
 	public int getId() {
 		return id;
+		
 	}
+	
+	
+	
 	
 	 /**
 	  * Provides the parameters information in a String format
@@ -65,6 +78,9 @@ public class Phone {
 	 }
 	
 	
+	
+	
+    
 	
 	
 }
