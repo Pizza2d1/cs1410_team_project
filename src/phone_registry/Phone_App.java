@@ -1,7 +1,13 @@
-package dc_review;
+package phone_registry;
 import java.util.Scanner;
 
-public class dc_review_APP {
+/**
+ * The main app java file that provides input access to the user
+ * 
+ * @author Nathan Young
+ */
+
+public class Phone_App {
 
 	public static void main(String[] args) {	
 		System.out.println("Hello user");
