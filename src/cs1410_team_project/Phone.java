@@ -1,4 +1,4 @@
-package  cs1410_team_project;
+package  Phone_registry;
 import java.util.HashMap; 
 import java.util.ArrayList;
 /**
@@ -24,7 +24,8 @@ public class Phone {
 		this.Manufacturer = manufacturer;
 		this.ScreenType = screenType;
 		this.StorageSpace = storageSpace;
-		this.id = 123456 + nextId++;
+		this.id = 1234567 + nextId++;
+		
 		
 	}
 	
